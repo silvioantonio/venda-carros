@@ -1,9 +1,9 @@
 package com.silvio.plataforma.repository;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.CrudRepository;
 
-import com.silvio.plataforma.model.User;
+import com.silvio.plataforma.model.Usuario;
 
-public interface UserRepository extends PagingAndSortingRepository<User, Long>{
-	User findByUserName(String username);
+public interface UserRepository extends CrudRepository<Usuario, Long>{
+	Usuario findByUserName(String username);
 }
