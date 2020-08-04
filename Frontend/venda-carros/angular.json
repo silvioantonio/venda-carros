@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "venda-carros"
+    }
+  },
+  "defaultProject": "venda-carros",
+  "cli": {
+    "analytics": "a417d6d5-50d9-46c7-9c7b-2158aa521391"
+  }
 }
