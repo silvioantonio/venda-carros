@@ -2,12 +2,12 @@
 <div>
   <mat-form-field appearance="fill">
     <mat-label>User Name</mat-label>
-    <input matInput [(ngModel)] = 'usuario.username'>
+    <input matInput [(ngModel)] = 'usuario.username' name="user">
   </mat-form-field>
   <br>
   <mat-form-field appearance="fill">
     <mat-label>Enter your password</mat-label>
-    <input matInput [(ngModel)] = 'usuario.password'>
+    <input matInput [(ngModel)] = 'usuario.password' name="password">
   </mat-form-field>
 </div>
-<button mat-raised-button color="primary" (click)="login()">Primary</button>
+<button mat-raised-button name="btnLogin" color="primary" (click)="login()">Primary</button>

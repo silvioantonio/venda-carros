@@ -1,3 +1,5 @@
+
+import { HttpClient } from '@angular/common/http';
 import { Usuario } from './usuario';
 import { Router } from '@angular/router';
 import { Injectable, EventEmitter } from '@angular/core';
@@ -11,11 +13,16 @@ export class AuthService {
 
   mostrarMenuEmitter = new EventEmitter<boolean>();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
-  fazerLogin(usuario: Usuario) {
+  fazerLogin(username: string, password: string) {
 
-    if(usuario.username === 'admin' && usuario.password === 'senha123'){
+    this.http.post("http://localhost:8080/", {username, password}).subscribe(data => {
+      this.router.navigate(['/veiculos'])
+    })
+
+
+    /*if(usuario.username === 'admin' && usuario.password === 'senha123'){
       this.usuarioAutenticado = true;
 
       this.mostrarMenuEmitter.emit(true);
@@ -25,8 +32,7 @@ export class AuthService {
       this.usuarioAutenticado = false;
 
       this.mostrarMenuEmitter.emit(false);
-    }
-
+    }*/
   }
 
   isUsuarioAutenticado() { return this.usuarioAutenticado; }
