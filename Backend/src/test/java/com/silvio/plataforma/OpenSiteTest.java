@@ -55,7 +55,7 @@ public class OpenSiteTest {
 		
 		assertEquals("https://gestao-de-frotas.netlify.app/", driver.getCurrentUrl());
 		
-		Thread.sleep(5000);
+		Thread.sleep(5000); 
 	}
 
 	@Test
